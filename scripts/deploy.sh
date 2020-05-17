@@ -38,7 +38,8 @@ else
 fi
 
 # 把构建好的文件目录给拷贝进来
-cp -a ..\\"${siteSource}"\\. .
+# shellcheck disable=SC1003
+cp -a ..'\'"${siteSource}"'\'. .
 
 ls -la
 
