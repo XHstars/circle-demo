@@ -23,7 +23,7 @@ jobs:
           key: dependencies_xh
       - run:
           name: Build
-          command: npm build
+          command: npm run build
       - run:
           name: Prepare shell commands
           # shell chmod +x 赋予执行权限
