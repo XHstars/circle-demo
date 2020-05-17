@@ -11,7 +11,7 @@ set -e
 pwd
 remote=$(git config remote.origin.url)
 
-echo 'remote is: '$remote
+echo 'remote is: '"$remote"
 
 # 新建一个发布的目录
 mkdir gh-pages-branch
@@ -23,9 +23,10 @@ git config --global user.name "$GH_NAME" >/dev/null 2>&1
 git init
 git remote add --fetch origin "$remote"
 
-echo 'email is: '$GH_EMAIL
-echo 'name is: '$GH_NAME
-echo 'sitesource is: '$siteSource
+echo 'email is: '"$GH_EMAIL"
+echo 'name is: '"$GH_NAME"
+# shellcheck disable=SC2154
+echo 'sitesource is: '"$siteSource"
 
 # 切换gh-pages分支
 if git rev-parse --verify origin/gh-pages >/dev/null 2>&1; then
